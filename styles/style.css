@@ -121,9 +121,26 @@ main {
     justify-content: space-between;
 }
 
+.page3-header p {
+    background-color: green;
+    color: white;
+    padding: 3px 0 3px 3px;
+}
+
+.page3-header p span {
+    background-color: red;
+    padding: 3px;
+    font-weight: bold;
+}
+
 .question-body {
     margin-top: 20px;
     padding: 0 20px;
+}
+
+.question-body h3 {
+    font-size: 24px;
+    line-height: 40px;
 }
 
 .question-list ul {
@@ -134,21 +151,12 @@ main {
     margin: 25px 0;
 }
 
-.question-list ul li {
+.list-style {
     background-color: rgb(209, 209, 228);
     border: 2px solid rgba(0, 0, 255, 0.4);
     padding: 10px;
 }
 
-/* .question-footer {
-    padding: 0 20px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid black;
-} */
 
 #next-quiz {
     background-color: orange;
@@ -158,4 +166,16 @@ main {
     position: absolute;
     bottom: 0;
     right: 0;
+    font-weight: bold;
+}
+
+#next-quiz:hover {
+    background-color: aqua;
+}
+
+.question-footer p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px 30px;
 }
