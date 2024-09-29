@@ -13,7 +13,6 @@ const resultBtn = document.getElementById("resultBtn");
 let nextEl;
 let index = 0;
 let correctAns = 0;
-console.log(correctAns);
 
 startQuiz.addEventListener("click", function () {
   nextEl = page.nextElementSibling;
@@ -51,22 +50,21 @@ function showQues() {
   quesNoEl.innerText = question[index].no;
 
 
-  console.log(e.target.innerText === question[index].ans);
- 
+  
   
   ul.addEventListener("click", function (e) {
-    ul.childNodes.forEach(elem => {
-        elem.classList.remove('bg-green-400', 'border-green-600');
+      ul.childNodes.forEach(elem => {
+          elem.classList.remove('bg-green-400', 'border-green-600');
+        });
+        e.target.classList.add("bg-green-400", "border-green-600");
+        console.log(question[index].ans);
+        if(e.target.innerText === question[index].ans) {
+            correctAns++;
+        }
     });
-    e.target.classList.add("bg-green-400", "border-green-600");
-    console.log(question[index].ans);
-    if(e.target.innerText === question[index].ans) {
-        correctAns++;
-    }
-  });
-  
+    
 
-  if (index === question.length) {
+  if (index === question.length - 1) {
     nextQuizBtn.classList.add("hidden");
     resultBtn.classList.remove("hidden");
   }
