@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 
     <main>
-        <!-- <section>
+        <section class="page">
             <div style="border-bottom: 1px solid black;">
                 <img src="images/photo1.svg" style="padding: 5px;" alt="this is a banner image">
             </div>
@@ -20,10 +21,10 @@
             </div>
     
             <button id="startQuiz">Start Quiz</button>
-        </section> -->
+        </section>
 
 
-            <!-- <section class="page2">
+            <section class="page page2 hidden">
                 <div class="rules-heading">
                     <h3>Some rules of this quiz</h3>
                 </div>
@@ -40,36 +41,40 @@
                     <button id="exit">Exit Quiz</button>
                     <button id="continue">Continue</button>
                 </div>
-            </section> -->
+            </section>
 
-            <section class="page3">
-                <div class="page3-header">
+            <section class="page page3 hidden">
+                <div class="page3-header items-center">
                     <h4>Start Exam</h4>
                     <p>Time Off <span>00</span></p>
                 </div>
 
-                <div class="time-line"></div>
+                <div class="time-line h-1 bg-blue-600"></div>
 
-                <div class="question-body">
-                    <h3><span>1</span>. What does HTML Stand For?</h3>
+                <div id="quesBody" class="question-body">
 
-                    <div class="question-list">
-                        <ul>
-                            <!-- <li class="list-style">Hyper Text Preporcessor</li>
-                            <li class="list-style">Hyper Text Markup Language</li>
-                            <li class="list-style">Hyper Text Multiple Language</li>
-                            <li class="list-style">Hyper Tool Multi Language</li> -->
+                    <!-- <div class="question-list">
+                        <ul id="quesUl">
+                          
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="question-footer">
                     <p><span id="quesNO">0</span> of <span id="total-q">0</span> Questions</p>
                     <button id="next-quiz">Next Quiz</button>
+                    <button id="resultBtn" class="hidden resultBtn">Result</button>
                 </div>
             </section>
+
+           <!-- <ul class="mt-96">
+            <li class="bg-blue-300 py-2 px-3 rounded-lg">sadjf</li>
+           </ul> -->
     </main>
     
-    <script type="module" src="script/script.js"></script>
+    <!-- <script type="module" src="script/script.js"></script> -->
+     <script src="script/data.js"></script>
+     <script src="script/script.js"></script>
+     
 </body>
 </html>

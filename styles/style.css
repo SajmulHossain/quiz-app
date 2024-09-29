@@ -158,7 +158,8 @@ main {
 }
 
 
-#next-quiz {
+#next-quiz,
+.resultBtn {
     background-color: orange;
     border: none;
     padding: 10px 30px;

@@ -1,5 +1,6 @@
 const question = [
     {
+        no: 1,
         question: 'What does HTML Stand For?',
         ans: 'Hyper Text Markup Language',
         option: [
@@ -11,6 +12,7 @@ const question = [
     },
 
     {
+        no: 2,
         question:'What does CSS Stand for?',
         ans: 'Cascading Style Sheet',
         option: [
@@ -22,6 +24,7 @@ const question = [
     },
 
     {
+        no: 3,
         question: 'What does PHP Stand For?',
         ans: 'Hypertext Preprocessor',
         option: [
@@ -33,6 +36,7 @@ const question = [
     },
 
     {
+        no: 4,
         question: 'What is Your Name?',
         ans: 'Hypertext Preprocessor',
         option: [
@@ -44,6 +48,7 @@ const question = [
     },
 
     {
+        no: 5,
         question: 'What does PHP Stand For?',
         ans: 'Hypertext Preprocessor',
         option: [
@@ -55,6 +60,7 @@ const question = [
     },
 
     {
+        no: 6,
         question: 'What is Your Name?',
         ans: 'Hypertext Preprocessor',
         option: [
@@ -66,6 +72,7 @@ const question = [
     },
 
     {
+        no: 7,
         question: 'What does PHP Stand For?',
         ans: 'Hypertext Preprocessor',
         option: [
@@ -79,6 +86,6 @@ const question = [
     
 ];
 
-export function data() {
-    return question;
-}
+// export function data() {
+//     return question;
+// }
