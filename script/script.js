@@ -12,6 +12,7 @@ const totalQuestion = document.getElementById("totalQues");
 const correctAnswer = document.getElementById("correctAns");
 const result = document.getElementById("result");
 const timeCount = document.getElementById("timeCount");
+const line = document.getElementById("line");
 
 let nextEl;
 let index = 0;
@@ -68,7 +69,6 @@ function showQues() {
       nextQuizBtn.removeAttribute("disabled");
     });
   });
-  console.log(lastClicked);
 
   if (index === question.length - 1) {
     nextQuizBtn.classList.add("hidden");
@@ -80,12 +80,20 @@ function showQues() {
   countdown = setInterval(() => {
     totalTime--;
     timeCount.innerText = totalTime.toString().padStart(2, 0);
+    line.style.width += "6.66666666%";
   }, 1000);
 
   timeOut = setTimeout(() => {
     clearInterval(countdown);
     totalTime = 15;
     quesBody.innerHTML = "";
+    if (lastClicked === question[index].ans) {
+      correctAns++;
+    }
+
+    if (index === question.length - 1) {
+      showResult();
+    }
     index++;
     showQues();
     nextQuizBtn.setAttribute("disabled", "true");
@@ -106,6 +114,10 @@ nextQuizBtn.addEventListener("click", function () {
 });
 
 resultBtn.addEventListener("click", function () {
+  showResult();
+});
+
+function showResult() {
   if (lastClicked === question[index].ans) {
     correctAns++;
   }
@@ -116,4 +128,4 @@ resultBtn.addEventListener("click", function () {
   nextEl.nextElementSibling.classList.add("flex");
   totalQuestion.innerText = question.length;
   correctAnswer.innerText = correctAns;
-});
+}
