@@ -21,6 +21,7 @@ let totalTime = 15;
 let countdown;
 let timeOut;
 let lastClicked = null;
+let width;
 
 startQuiz.addEventListener("click", function () {
   nextEl = page.nextElementSibling;
@@ -77,14 +78,20 @@ function showQues() {
 
   timeCount.innerText = totalTime;
 
+  let w = 0;
   countdown = setInterval(() => {
     totalTime--;
     timeCount.innerText = totalTime.toString().padStart(2, 0);
-    line.style.width += "6.66666666%";
   }, 1000);
+
+  width = setInterval(() => {
+    w = w + (100/1500);
+    line.style.width = w + '%';
+  }, 10);
 
   timeOut = setTimeout(() => {
     clearInterval(countdown);
+    clearInterval(width)
     totalTime = 15;
     quesBody.innerHTML = "";
     if (lastClicked === question[index].ans) {
@@ -107,6 +114,7 @@ nextQuizBtn.addEventListener("click", function () {
   quesBody.innerHTML = "";
   index++;
   clearInterval(countdown);
+  clearInterval(width);
   clearTimeout(timeOut);
   totalTime = 15;
   showQues();
@@ -122,6 +130,7 @@ function showResult() {
     correctAns++;
   }
   clearInterval(countdown);
+  clearInterval(width);
   clearInterval(timeOut);
   nextEl.classList.add("hidden");
   nextEl.nextElementSibling.classList.remove("hidden");
