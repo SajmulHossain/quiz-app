@@ -180,3 +180,7 @@ main {
     left: 0;
     padding: 10px 30px;
 }
+
+#next-quiz[disabled] {
+    background-color: gray;
+}
