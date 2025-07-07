@@ -85,13 +85,13 @@ function showQues() {
   }, 1000);
 
   width = setInterval(() => {
-    w = w + (100/1500);
-    line.style.width = w + '%';
+    w = w + 100 / 1500;
+    line.style.width = w + "%";
   }, 10);
 
   timeOut = setTimeout(() => {
     clearInterval(countdown);
-    clearInterval(width)
+    clearInterval(width);
     totalTime = 15;
     quesBody.innerHTML = "";
     if (lastClicked === question[index].ans) {
